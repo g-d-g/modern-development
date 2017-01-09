@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '6'
+script:
+  - yarn run build:html
+cache: yarn
+after_success:
+- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then ./node_modules/.bin/git-update-ghpages -e; fi
+env:
+  global:
+    - GIT_NAME: Travis CI
+    - GIT_EMAIL: nobody@nobody.org
+    - GITHUB_REPO: rstacruz/modern-development
+    - GIT_SOURCE: _book
