@@ -55,6 +55,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="summary.html" />
+    
     
     <link rel="prev" href="readme_files.html" />
     
@@ -482,14 +484,14 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3.7" >
+        <li class="chapter " data-level="3.3.7" data-path="summary.html">
             
-                <span>
+                <a href="summary.html">
             
                     
                     Summary
             
-                </span>
+                </a>
             
 
             
@@ -921,15 +923,51 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="inline-documentation">Inline documentation</h1>
-<pre class="language-"><code class="lang-rb"><span class="token comment" spellcheck="true"># Adds numbers.</span>
-<span class="token keyword">def</span> <span class="token function">add_number</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
-  x <span class="token operator">+</span> y
+<pre class="language-"><code class="lang-rb"><span class="token comment" spellcheck="true"># Publishes an article. This sets the `published_at`</span>
+<span class="token comment" spellcheck="true"># timestamp and makes the article appear in the</span>
+<span class="token comment" spellcheck="true"># `Article.published` scope.</span>
+<span class="token keyword">def</span> publish<span class="token operator">!</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token keyword">end</span>
 </code></pre>
+<p>In an ideal world, we should always describe our work with documentation. In practical scenarios, we have time constraints and some things may be more important.</p>
+<h2 id="should-i-write-documentation">Should I write documentation?</h2>
 <ul>
-<li>Prioritize tests over documentation.</li>
-<li>Prioritize documenting reusable parts.</li>
+<li><p><strong>Prioritize tests over documentation.</strong> A strong test suite has more long-term benefits than documentation, and good tests can be a poor substitute for documentation as well.</p>
+</li>
+<li><p><strong>Prioritize documenting reusable parts.</strong> If you&apos;re writing code that a teammate it likely to need in the future, write some documentation for it.</p>
+</li>
+<li><p><strong>Prioritize documenting classes/modules</strong> over individual methods. Documenting evry method is time consuming. If you little time to write documentation, prioritize documenting whole classes.</p>
+</li>
 </ul>
+<h2 id="example">Example</h2>
+<p>Here&apos;s a very basic example of documentation that was written in haste. Despite missing actual words, a quick glance can help a new developer understand how this class works and how it&apos;s used.</p>
+<pre class="language-"><code class="lang-rb"><span class="token comment" spellcheck="true"># A blog post.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># == Scopes</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#     Article.published</span>
+<span class="token comment" spellcheck="true">#     Article.drafts</span>
+<span class="token comment" spellcheck="true">#     Article.feature</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># == Methods</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#     @article.publish!</span>
+<span class="token comment" spellcheck="true">#     @article.feature!</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># == Presenters</span>
+<span class="token comment" spellcheck="true"># Also see +ArticlePresenter+.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#     @article.presenter.body_html</span>
+<span class="token comment" spellcheck="true">#     @article.presenter.body_markdown</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token keyword">class</span> <span class="token class-name">Article</span> <span class="token operator">&lt;</span> <span class="token constant">ActiveRecord</span><span class="token punctuation">:</span><span class="token symbol">:Base</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">end</span>
+</code></pre>
+<blockquote>
+<p><strong>Next:</strong> Let&apos;s <a href="summary.html">recap what we&apos;ve learned</a>.</p>
+</blockquote>
 
                                 
                                 </section>
@@ -957,10 +995,14 @@
 
             
                 
-                <a href="readme_files.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Readme files">
+                <a href="readme_files.html" class="navigation navigation-prev " aria-label="Previous page: Readme files">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="summary.html" class="navigation navigation-next " aria-label="Next page: Summary">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -969,7 +1011,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Inline documentation","level":"3.3.6","depth":2,"next":{"title":"Summary","level":"3.3.7","depth":2,"ref":"","articles":[]},"previous":{"title":"Readme files","level":"3.3.5","depth":2,"path":"coding/readme_files.md","ref":"coding/readme_files.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","prism","-highlight","-fontsettings"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-20473929-1"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":10,"fontFamily":"Arial","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":40,"left":40,"top":64,"bottom":64}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Modern Development Handbook","gitbook":"*"},"file":{"path":"coding/inline_docs.md","mtime":"2017-01-10T14:57:53.625Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T14:59:16.694Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Inline documentation","level":"3.3.6","depth":2,"next":{"title":"Summary","level":"3.3.7","depth":2,"path":"coding/summary.md","ref":"coding/summary.md","articles":[]},"previous":{"title":"Readme files","level":"3.3.5","depth":2,"path":"coding/readme_files.md","ref":"coding/readme_files.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","prism","-highlight","-fontsettings"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-20473929-1"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":10,"fontFamily":"Arial","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":40,"left":40,"top":64,"bottom":64}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Modern Development Handbook","gitbook":"*"},"file":{"path":"coding/inline_docs.md","mtime":"2017-01-10T15:15:48.337Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T15:17:00.273Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
